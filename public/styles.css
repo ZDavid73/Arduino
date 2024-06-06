@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    position: relative; /* Añadido para posicionar el color de fondo relativo al cuerpo */
+}
+
+.color-background {
+    position: absolute;
+    width: 350px; /* Ajusta el tamaño según necesites */
+    height: 100px; /* Ajusta el tamaño según necesites */
+    background-color: transparent;
+    border-radius: 50px;
+    transition: background-color 0.5s ease; /* Transición para el cambio de color */
+    z-index: 0;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px; /* Ajusta el espacio entre los botones si es necesario */
+    position: relative;
+    z-index: 1; /* Asegúrate de que los botones estén por encima del fondo de color */
+}
+
+.btn {
+    width: 90px; /* Ajusta el tamaño según necesites */
+    height: 90px; /* Ajusta el tamaño según necesites */
+    font-size: 18px; /* Aumenta el tamaño de la fuente si es necesario */
+    cursor: pointer;
+    border: none;
+    border-radius: 50%; /* Hacer los botones circulares */
+    transition: background-color 0.3s, transform 0.2s;
+    color: white;
+    background: linear-gradient(90deg, #FF8B37 0%, #FFC700 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.btn:active::before {
+    transform: scale(0.95);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.active {
+    background-color: #ff8b37; /* Cambia el color a un color sólido */
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+}
+
+/* Asegúrate de que los botones normales tengan el degradado */
+#libre,
+#ocupado,
+#compartir {
+    background: linear-gradient(90deg, #FF8B37 0%, #FFC700 100%);
+}
